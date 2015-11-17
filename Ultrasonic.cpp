@@ -1,3 +1,11 @@
+/*
+ * Ultrasonic library
+ * This library can be used with SR(F)04 an compatible ultrasonic devices.
+ * 
+ * Author:        Sandro Lutz
+ * Copyright(c) 2015. All rights reserved.
+ */
+
 #include "Ultrasonic.h"
 
 Ultrasonic::Ultrasonic(int pin)
@@ -10,7 +18,7 @@ Ultrasonic::Ultrasonic(int triggerPin, int echoPin)
   _init(triggerPin, echoPin);
 }
 
-Ultrasonic::init(int triggerPin, int echoPin)
+void Ultrasonic::_init(int triggerPin, int echoPin)
 {
   if(triggerPin == echoPin) {
     _oneWireConnection = true;
@@ -29,7 +37,7 @@ Ultrasonic::init(int triggerPin, int echoPin)
   }
 }
 
-unsigned long Ultrasonic::_getTimeDifference(unsigned long time1, unsigned long time 2)
+unsigned long Ultrasonic::_getTimeDifference(unsigned long time1, unsigned long time2)
 {
   if(time1 > time2) { // an overflow occured
     return 4294967295 - time1 + time2;
@@ -53,7 +61,7 @@ bool Ultrasonic::measure()
     return false;
   }
   _startTime = micros();
-  while(digitalRead(_echoPin) == HIGH && _getTimeDifference(_startTime. micros()) < INVALID_DATA_TIMEOUT); 
+  while(digitalRead(_echoPin) == HIGH && _getTimeDifference(_startTime, micros()) < INVALID_DATA_TIMEOUT); 
   if(digitalRead(_echoPin) == HIGH) {  // ultrasonic device did not receive an echo (no objects in range)
     _distance = -1;
     return true;

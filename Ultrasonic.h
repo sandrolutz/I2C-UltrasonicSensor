@@ -3,7 +3,7 @@
  * This library can be used with SR(F)04 an compatible ultrasonic devices.
  * 
  * Author:        Sandro Lutz
- * Last modified: 2015-11-13
+ * Copyright(c) 2015. All rights reserved.
  */
 
 #ifndef Ultrasonic_h
@@ -29,6 +29,6 @@ class Ultrasonic
         unsigned long _startTime;
 
         void _init(int triggerPin, int echoPin);
-        unsigned long getTimeDifference(unsigned long time1, unsigned long time2);
+        unsigned long _getTimeDifference(unsigned long time1, unsigned long time2);
 };
 #endif
