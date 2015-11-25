@@ -1,9 +1,8 @@
-/*
+/* 
+ * ------------------------------------------------------------------------------
  * Ultrasonic library
- * This library can be used with SR(F)04 an compatible ultrasonic devices.
- * 
- * Author:        Sandro Lutz
- * Copyright(c) 2015. All rights reserved.
+ * See Ultrasonic.h file for more Information about license and author.
+ * ------------------------------------------------------------------------------
  */
 
 #include "Ultrasonic.h"
