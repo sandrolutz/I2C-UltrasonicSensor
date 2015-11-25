@@ -9,7 +9,8 @@ I used an Arduino nano. It should be working on any other Arduino board too.
 > ```Ultrasonic ultrasonic(\<trigger_pin\>, \<echo_pin\>)```
 
 ## Download
-You can simply download the current version of this project [here](https://github.com/sandrolutz/I2C-UltrasonicSensor/archive/master.zip).
+1. Download the current version of this project [here](https://github.com/sandrolutz/I2C-UltrasonicSensor/archive/master.zip).
+2. Unzip the files into a folder named ```I2C-UltrasonicSensor``` to ensure correct functionality of the Arduino IDE.
 
 ## Usage
 The communication with this I2C sensor is as follows:
@@ -17,7 +18,7 @@ The communication with this I2C sensor is as follows:
 | Packet (Bytes separated by slash)  | Description |
 |------------------------------------|-------------|
 | *\<address\>* / 81 | start measurment |
-| *\<address\>* / 70 / *\<delay\>*            | Start free running mode (starts another measurment automatically with the given delay in ms |
+| *\<address\>* / 70 / *\<delay\>*            | Start free running mode (starts another measurment automatically after the given delay in ms |
 | *\<address\>* / 69                    | Stops free running mode |
 | *\<address\>* / 170 / 165 / *\<new_address\>* | Set a new address for this device. It will no longer be accessible with the old address! <br/>**Note:** The addresses 0, 80, 164, 170 are invalid. |
 
