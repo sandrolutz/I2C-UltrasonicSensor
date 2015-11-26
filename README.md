@@ -22,6 +22,8 @@ The communication with this I2C sensor is as follows:
 | *\<address\>* / 69                    | Stops free running mode |
 | *\<address\>* / 170 / 165 / *\<new_address\>* | Set a new address for this device. It will no longer be accessible with the old address! <br/>**Note:** The addresses 0, 80, 164, 170 are invalid. |
 
+To get the measured distance, you can simply request 2 bytes over I2C.
+
 ## License
 The MIT License (MIT)
   
