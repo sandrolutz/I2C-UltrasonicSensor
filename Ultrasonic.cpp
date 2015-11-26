@@ -55,7 +55,7 @@ bool Ultrasonic::measure()
     digitalWrite(_triggerPin, HIGH);
   }
   _startTime = micros();
-  while(digitalRead(_echoPin) == LOW && _getTimeDifference(_startTime, micros()) < SENSOR_TIMEOUT);  // wait for the sensor to answer
+  while(digitalRead(_echoPin) == LOW && _getTimeDifference(_startTime, micros()) < NO_SENSOR_TIMEOUT);  // wait for the sensor to answer
   if(digitalRead(_echoPin) == LOW) {  // ultrasonic device did not answer within time.
     return false;
   }

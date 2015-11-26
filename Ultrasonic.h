@@ -32,7 +32,7 @@
 #ifndef Ultrasonic_h
 #define Ultrasonic_h
 
-#define SENSOR_TIMEOUT 10000        // in µs
+#define NO_SENSOR_TIMEOUT 10000        // in µs
 #define INVALID_DATA_TIMEOUT 50000  // in µs
 
 #include <Arduino.h>
